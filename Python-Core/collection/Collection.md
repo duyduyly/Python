@@ -1,5 +1,10 @@
 # Collection
 
+# Keyword
+
+- [List](#list)
+- [Tuples](#tuples)
+
 ## List
 
 - Allow duplicate values.
@@ -307,3 +312,135 @@ after change
 [1, 2, 3, 4, 5] (3) 
 [1, 2, 3, 4, 5] (4) 
 ```
+
+----------------------
+<br/>
+
+## Tuples
+
+__Key:__ <br/>
+| [Why Use Tuples?](#-why-use-tuples) | [Create Tuple](#create-tuples) | [Unpack Tuples](#unpack-tuples) | <br/>
+| [Use Case](#-use-cases) | [Tuple Methods](#tuple-methods) | <br/>
+
+### About Tuples
+- Tuples are `unchangeable`, meaning that we `cannot change`, `add` or `remove` items after the tuple has been created.
+- Allow duplicates
+- Same list, but it's not support method to change value because it's immutable (unchangeable)
+
+### 🔹 Why Use Tuples?
+
+| Feature        | Benefit                                                                    |
+|----------------|----------------------------------------------------------------------------|
+| 🔒 Immutable   | Safe from accidental changes (good for constants or config)                |
+| ⚡ Faster       | More memory-efficient and faster than lists for fixed data                 |
+| 🧠 Hashable    | Can be used as dictionary keys or set elements (if contents are immutable) |
+| ✅ Ordered      | Supports indexing and slicing                                              |
+| 📦 Lightweight | Useful for fixed-size records (name, age, etc.)                            |
+
+### Create Tuples
+```python
+thistuple = ("apple",)
+print(type(thistuple))  # Tuple
+
+thistuple = ("apple")
+print(type(thistuple))  # str
+
+myTuple3 = tuple(("apple", "banana", "cherry"))  # note the double round-brackets
+print(myTuple3)
+```
+
+```text
+<class 'tuple'>
+<class 'str'>
+('apple', 'banana', 'cherry')
+```
+
+#
+### Access
+
+- same with list
+
+#
+
+### Update
+
+- convert `from tuple to list` and `update` or `delete`
+
+```python
+x = ("apple", "banana", "cherry")
+y = list(x)
+y[1] = "kiwi"
+x = tuple(y)
+
+print(x)
+```
+
+#
+
+### Unpack Tuples
+
+- Unpacking a `tuple means assigning` each element of a tuple (or any iterable) to its own variable in a `single line`.
+
+#### ✅ it's Ok
+
+```python
+fruits = ("apple", "banana", "cherry")
+
+(green, yellow, red) = fruits
+
+print(green)
+print(yellow)
+print(red)
+```
+
+#### 🔴 It's not Ok
+
+```python
+fruits = ("apple", "banana", "cherry")
+
+(green, yellow) = fruits
+```
+
+#### Extended Unpacking with *
+
+```python
+fruits = ("apple", "banana", "cherry")
+
+(green, *yellow) = fruits
+
+print(green)
+print(yellow)
+```
+
+```text
+apple
+['banana', 'cherry']
+```
+
+#### ✅ Use Cases
+
+| Use Case                    | Example               |
+|-----------------------------|-----------------------|
+| Assign multiple values      | `x, y = (1, 2)`       |
+| Swap variables              | `a, b = b, a`         |
+| Loop through list of tuples | `for x, y in points:` |
+| Ignore values with `_`      | `x, _, z = (1, 2, 3)` |
+
+#### You can also unpack in for loops
+
+```python
+pairs = [(1, 'a'), (2, 'b'), (3, 'c')]
+for num, char in pairs:
+    print(num, char)
+```
+
+#
+
+### Tuple Methods
+
+| **Method** | **Description**                                               | **Example**             | **Output / Result** |
+|------------|---------------------------------------------------------------|-------------------------|---------------------|
+| `count(x)` | Returns the number of times `x` appears in the tuple          | `(1, 2, 2, 3).count(2)` | `2`                 |
+| `index(x)` | Returns the **first index** of value `x` (error if not found) | `(1, 2, 3).index(3)`    | `2`                 |
+
+
