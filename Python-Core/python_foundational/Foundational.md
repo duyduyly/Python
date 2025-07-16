@@ -14,6 +14,8 @@
   - [Slicing String](#slicing-string)
   - [String methods](#string-methods)
   - [String Format](#string-format)
+- [Boolean](#boolean)
+- [Operator](#operator)
 
 
 ------------------------------
@@ -331,12 +333,76 @@ print("Hello, World!".split(","))
 ### String Format
 ```python
 price = 59
-print(f"The price is {price} dollars") #Add a placeholder for the price variable.
-print(f"The price is {price:.2f} dollars") #Display the price with 2 decimals.
-print(f"The price is {20 * 59} dollars") #Perform a math operation in the placeholder, and return the result.
+print(f"The price is {price} dollars")  #Add a placeholder for the price variable.
+print(f"The price is {price:.2f} dollars")  #Display the price with 2 decimals.
+print(f"The price is {20 * 59} dollars")  #Perform a math operation in the placeholder, and return the result.
 ```
+
 ```text
 The price is 59 dollars
 The price is 59.00 dollars
 The price is 1180 dollars
+```
+
+------------------------
+<br/>
+
+## Boolean
+
+### Return True When
+
+- Almost any value is evaluated to True if it has some sort of content.
+- Any string is True, except empty strings.
+- Any number is True, except 0.
+- Any list, tuple, set, and dictionary are True, except empty ones.
+
+```python
+x = "Hello"
+y = 15
+
+print(bool(x))
+print(bool(y))
+bool("abc")
+bool(123)
+bool(["apple", "cherry", "banana"])
+```
+
+### Return False When
+
+```python
+bool(False)
+bool(None)
+bool(0)
+bool("")
+bool(())
+bool([])
+bool({})
+```
+
+----------------------
+<br/>
+
+## Operator
+
+- Read Here! (https://www.w3schools.com/python/python_operators.asp)
+
+-------------------
+<br/>
+
+## For Loop
+
+```python
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+  print(fruit)
+
+for i in range(5):  # 0 to 4
+  print(i)
+
+for i in range(len(fruits)):
+  print(i, fruits[i])
+
+for index, fruit in enumerate(fruits):
+  print(index, fruit)
 ```
