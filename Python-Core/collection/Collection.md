@@ -4,6 +4,7 @@
 
 - [List](#list)
 - [Tuples](#tuples)
+- [Set](#set)
 
 ## List
 
@@ -444,3 +445,104 @@ for num, char in pairs:
 | `index(x)` | Returns the **first index** of value `x` (error if not found) | `(1, 2, 3).index(3)`    | `2`                 |
 
 
+---------------
+<br/>
+
+## Set
+- Set items are unordered, unchangeable, and do not allow duplicate values.
+- Unordered:
+  - Unordered means that the items in a set do not have a defined order.
+  - Set items can appear in a different order every time you use them, and cannot be referred to by index or key.
+- Unchangeable
+  - Set items are unchangeable, meaning that we cannot change the items after the set has been created.
+
+#
+### key
+- [Create](#create-set)
+- [Add](#add-element-in-set)
+- [Remove](#remove-element-in-set)
+- [Join](#join-multiple-sets)
+- [Method](#methods-in-set)
+
+#
+### Create Set
+```python
+thisset = {"apple", "banana", "cherry", "apple"} #created by {} 
+
+thisset2 = {"apple", "banana", "cherry", True, 1, 2} # 1 and True is same, so set just store True
+
+# and, 0 and False is also same.
+```
+
+#
+### Add Element in Set
+
+```python
+mySet = {"apple", "banana", "cherry"}
+
+mySet.add("orange")
+print(mySet, end="(1) \n") #add a element
+
+myList = ["pineapple", "mangle"]
+mySet.update(myList) #add a List to set
+print(mySet, end="(2) \n")
+```
+```text
+{'banana', 'cherry', 'apple', 'orange'}(1) 
+{'banana', 'cherry', 'mangle', 'pineapple', 'orange', 'apple'}(2) 
+```
+
+#
+### Remove Element in Set
+```python
+mySet2 = {"apple", "banana", "cherry"}
+
+mySet2.remove("banana")
+print(mySet2, end="(1) \n")
+mySet2.add("banana")  # remove by value
+
+mySet2.discard("banana")
+print(mySet2, end="(2) \n")  # remove by value
+mySet2.add("banana")
+
+mySet2.pop()  # Remove random value
+print(mySet2, end="(3) \n")
+
+mySet2.clear()
+print(mySet2, end="(4) \n")
+
+mySet3 = {"apple", "banana", "cherry"}
+
+del mySet3  # delete set completely out memory
+
+print(mySet3, end="(5) \n")
+```
+
+```text
+Traceback (most recent call last):
+  File "...\collection\SetDemo.py", line 30, in <module>
+    print(mySet3, end="(5) \n")
+NameError: name 'mySet3' is not defined. Did you mean: 'mySet'?
+
+{'cherry', 'apple'}(1) 
+{'cherry', 'apple'}(2) 
+{'apple', 'banana'}(3) 
+set()(4)
+```
+
+#
+### Join multiple Sets
+| **Method**                           | **Operator**                   | **Description**                                                             | **Example Code**                                          | **Result**              |
+|--------------------------------------|--------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------|-------------------------|
+| `union(other)`                       | `set4 = set1 \| set2  \| set3` | Returns `a new set` with all elements from both sets (no duplicates).       | `{1, 2}.union({2, 3})`                                    | `{1, 2, 3}`             |
+| `update(other)`                      | `set1 \|= set2`                | Not return and Update Called Method                                         | `a = {1, 2}; a.update({2, 3})`                            | `a` becomes `{1, 2, 3}` |
+| `intersection(other)`                | `set3 = set1 & set2`           | Returns a new set with `elements duplicate` of `both sets`.                 | `{1, 2, 3}.intersection({2, 3, 4})`                       | `{2, 3}`                |                         
+| `intersection_update(other)`         | `set1 &= set2`                 | Update the called set and take `duplicate value` of `both sets`.            | `a = {1, 2, 3}; a.intersection_update({2, 3, 4})`         | `a` becomes `{2, 3}`    |                         
+| `difference(other)`                  | `set3 = set1 - set2`           | Returns a new set with `keep all elements` from `set1 that are not in set2` | `{1, 2, 3}.difference({2, 3})`                            | `{1}`                   |                         
+| `difference_update(other)`           | `set1 -= set2`                 | Update set and same with `difference`                                       | `a = {1, 2, 3}; a.difference_update({2, 3})`              | `a` becomes `{1}`       |                         
+| `symmetric_difference(other)`        | `set3 = set1 ^ set2`           | Returns a new set with keep `all elements not duplicate` in both sets.      | `{1, 2, 3}.symmetric_difference({2, 3, 4})`               | `{1, 4}`                |                         
+| `symmetric_difference_update(other)` | `set1 ^= set2`                 | Updates set and same with `symmetric_difference`.                           | `a = {1, 2, 3}; a.symmetric_difference_update({2, 3, 4})` | `a` becomes `{1, 4}`    |                         
+
+#
+### Methods in Set
+- Can read Here! https://www.w3schools.com/python/python_sets_methods.asp
