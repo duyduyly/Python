@@ -20,6 +20,8 @@
 - [**Condition**](#condition)
 - [**Function**](#function)
 - [**Import Class**](#import-class)
+- [**Naming Conventions**](#naming-conventions)
+
 
 ------------------------------
 <br/>
@@ -534,3 +536,15 @@ service = tls.TodoListService()  # Uses alias
 
 -------------
 <br/>
+
+## Naming Conventions
+| Type                | Style                 | Example                  |
+|---------------------|-----------------------|--------------------------|
+| Variable / function | `snake_case`          | `user_age`, `get_info()` |
+| Class               | `PascalCase`          | `CustomerOrder`          |
+| Constant            | `ALL_CAPS`            | `MAX_SIZE`               |
+| Protected           | `_underscore`         | `_helper_method()`       |
+| Private             | `__double_underscore` | `__secret()`             |
+| Magic method        | `__dunder__`          | `__init__`, `__str__`    |
+| Module/file         | `snake_case.py`       | `math_utils.py`          |
+| Package             | `lowercase`           | `mypackage`              |
