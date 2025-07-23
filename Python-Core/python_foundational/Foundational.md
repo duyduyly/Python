@@ -1,21 +1,26 @@
 ## Foundational
 
 ## Keyword
-- [Print method](#print-method)
-- [Comment](#comment)
-- [Data Types](#data-types)
-- [Number Types](#number-types)
-  - [Casting](#numeric-casting)
-  - [Random Number](#random-number)
-- [String](#string-type)
-  - [Assign String](#assign-string)
-  - [String Array](#string-array)
-  - [Check String](#check-string)
-  - [Slicing String](#slicing-string)
-  - [String methods](#string-methods)
-  - [String Format](#string-format)
-- [Boolean](#boolean)
-- [Operator](#operator)
+- [**Print method**](#print-method)
+- [**Comment**](#comment)
+- [**Data Types**](#data-types)
+- [**Number Types**](#number-types)
+  - [*Casting*](#numeric-casting)
+  - [*Random Number*](#random-number)
+- [**String**](#string-type)
+  - [*Assign String*](#assign-string)
+  - [*String Array*](#string-array)
+  - [*Check String*](#check-string)
+  - [*Slicing String*](#slicing-string)
+  - [*String methods*](#string-methods)
+  - [*String Format*](#string-format)
+- [**Boolean**](#boolean)
+- [**Operator**](#operator)
+- [**For Loop**](#for-loop)
+- [**Condition**](#condition)
+- [**Function**](#function)
+- [**Import Class**](#import-class)
+- [**Naming Conventions**](#naming-conventions)
 
 
 ------------------------------
@@ -406,3 +411,140 @@ for i in range(len(fruits)):
 for index, fruit in enumerate(fruits):
   print(index, fruit)
 ```
+
+-------------------
+<br/>
+
+## Condition
+
+### If elif else 
+```python
+a = 200
+b = 50
+
+#if
+if b > a:
+    print("b greater than a")
+
+# if elif else
+if b > a:
+    print("b greater than a")
+elif b == a:
+    print("b equal a")
+else:
+    print("a greater than b")
+    
+#shortly
+print("b greater than a") if b > a else print("a greater than b")
+
+```
+#
+### Match
+#### Syntax
+```text
+match expression:
+  case x:
+    code block
+  case y:
+    code block
+  case z:
+    code block
+```
+
+```python
+month = 5
+day = 4
+match day:
+  case 1 | 2 | 3 | 4 | 5 if month == 4:
+    print("A weekday in April")
+  case 1 | 2 | 3 | 4 | 5 if month == 5:
+    print("A weekday in May")
+  case _:
+    print("No match")
+```
+
+------------------
+<br/>
+
+## Function
+```python
+def my_function(fname):
+  print(fname + " Refsnes")
+
+my_function("Emil")
+my_function("Tobias")
+my_function("Linus")
+
+#default parameter
+def greet(name="Guest"):
+    print(f"Hi {name}")
+
+#multiple arguments
+def total(*args):
+    return sum(args)
+
+print(total(1,2,3,4,5,6,7))
+
+#keyword arguments
+def show_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+show_info(name="Alice", age=25, country="USA")
+
+
+```
+
+-------------------
+<br/>
+
+## Import Class
+
+| Syntax                                        | What It Imports                  | How You Use It                      |
+|-----------------------------------------------|----------------------------------|-------------------------------------|
+| `import TodoListService`                      | Whole module (file)              | `TodoListService.TodoListService()` |
+| `import TodoListService as tls`               | Whole module, but renamed        | `tls.TodoListService()`             |
+| `from TodoListService import TodoListService` | Only the class `TodoListService` | `TodoListService()`                 |
+
+
+### 🧠 Best Practice?
+- ✅ Use `from ... import ...` when you just want a class or function (e.g., `from math import sqrt`)
+- ✅ Use `import module as alias` when you use many items from that file or want to shorten long names
+
+#
+Option 1: `import TodoListService`
+```python
+import TodoListService
+
+service = TodoListService.TodoListService()  # Need full name
+```
+
+#
+Option 2: `from TodoListService import TodoListService`
+```python
+from TodoListService import TodoListService
+
+service = TodoListService()  # Shorter and cleaner
+```
+
+#
+Option 3: `import TodoListService as tls`
+```python
+import TodoListService as tls
+
+service = tls.TodoListService()  # Uses alias
+```
+
+-------------
+<br/>
+
+## Naming Conventions
+| Type                | Style                 | Example                  |
+|---------------------|-----------------------|--------------------------|
+| Variable / function | `snake_case`          | `user_age`, `get_info()` |
+| Class               | `PascalCase`          | `CustomerOrder`          |
+| Constant            | `ALL_CAPS`            | `MAX_SIZE`               |
+| Protected           | `_underscore`         | `_helper_method()`       |
+| Private             | `__double_underscore` | `__secret()`             |
+| Magic method        | `__dunder__`          | `__init__`, `__str__`    |
+| Module/file         | `snake_case.py`       | `math_utils.py`          |
+| Package             | `lowercase`           | `mypackage`              |
