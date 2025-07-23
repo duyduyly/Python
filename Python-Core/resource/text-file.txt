@@ -1,0 +1,7 @@
+Or Open window and search: `Edit environment variables `
+- and then: open `environment variables...`
+![ConfigEnvironment-1.png](resource/ConfigEnvironment-1.png)
+- Choose path: ![ConfigEnvironment-2.png](resource/ConfigEnvironment-2.png)
+- Get python folder path: `C:\Python310`
+- paste here: ![ConfigEnvironment-3.png](resource/ConfigEnvironment-3.png)
+- OK OK and Apply
