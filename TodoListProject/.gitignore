@@ -1,0 +1,75 @@
+# === Python ===
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+.ENV/
+.env/
+.python-version
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+coverage.xml
+*.cover
+.cache
+.coverage*
+.hypothesis/
+
+# Type checker
+.mypy_cache/
+.pyre/
+dmypy.json
+
+# Jupyter
+.ipynb_checkpoints/
+
+# SQLite database
+*.sqlite3
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# === PyCharm / JetBrains IDEs ===
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Optional: keep run configurations (if needed)
+# !.idea/runConfigurations/
+
+# === VS Code ===
+.vscode/
+
+# === macOS ===
+.DS_Store
+
+# === Windows ===
+Thumbs.db
+ehthumbs.db
+Desktop.ini
