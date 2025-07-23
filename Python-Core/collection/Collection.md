@@ -32,6 +32,7 @@
   5. [*Copy*](#copy-in-dict)
   6. [*Nested*](#nested-in-dict)
   7. [*Methods*](#methods-in-dict)
+- [*Iterators*](#iterators)
 
 ------------------
 <br/>
@@ -690,3 +691,8 @@ inner
 #
 ### Methods in Dict
 Read Here! (https://www.w3schools.com/python/python_dictionaries_methods.asp)
+
+---------------
+<br/>
+
+## Iterators
