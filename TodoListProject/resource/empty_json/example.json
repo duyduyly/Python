@@ -1,0 +1,104 @@
+{
+  "tasks": {
+    "1": {
+      "title": "Todo 01",
+      "estimate_minutes": 120,
+      "start": "2025-07-23T12:01:00",
+      "end": "2025-07-23T14:01:00",
+      "tags": [
+        "work"
+      ]
+    },
+    "2": {
+      "title": "Todo 02",
+      "estimate_minutes": 120,
+      "start": "2025-07-23T12:01:00",
+      "end": "2025-07-23T14:01:00",
+      "tags": [
+        "learning"
+      ]
+    },
+    "3": {
+      "title": "Learning English And Practice Listening.",
+      "estimate_minutes": 120,
+      "start": "2025-07-23T12:01:00",
+      "end": "2025-07-23T14:01:00",
+      "tags": [
+        "learning"
+      ]
+    },
+    "4": {
+      "title": "Learning Python and Make a Mock Project.",
+      "estimate_minutes": 120,
+      "start": "2025-07-23T12:01:00",
+      "end": "2025-07-23T14:01:00",
+      "tags": [
+        "learning"
+      ]
+    }
+  },
+  "weekly_schedule": {
+    "mon": [
+      {
+        "task_id": 1,
+        "status": "todo"
+      }
+    ],
+    "tue": [
+      {
+        "task_id": 1,
+        "status": "todo"
+      },
+      {
+        "task_id": 2,
+        "status": "todo"
+      }
+    ],
+    "wed": [
+      {
+        "task_id": 1,
+        "status": "todo"
+      },
+      {
+        "task_id": 2,
+        "status": "todo"
+      },
+      {
+        "task_id": 3,
+        "status": "todo"
+      }
+    ],
+    "thu": [
+      {
+        "task_id": 1,
+        "status": "todo"
+      },
+      {
+        "task_id": 2,
+        "status": "todo"
+      }
+    ],
+    "fri": [
+      {
+        "task_id": 1,
+        "status": "todo"
+      },
+      {
+        "task_id": 2,
+        "status": "todo"
+      },
+      {
+        "task_id": 3,
+        "status": "processing"
+      }
+    ],
+    "sat": [],
+    "sun": [
+      {
+        "task_id": 3,
+        "status": "todo"
+      }
+    ]
+  },
+  "last_index": 2
+}

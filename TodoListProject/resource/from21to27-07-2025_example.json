@@ -1,61 +1,31 @@
 {
-  "monday": {
-    "task": [
-      {
-        "task": "Todo 01",
-        "estimate_time": "2 hours",
-        "start": "12:01 23-07-2025",
-        "end": "14-01 23-07-2025",
-        "status": "todo"
-      }
-    ]
+  "tasks": {
+    "1": {
+      "title": "Todo 01",
+      "estimate_minutes": 120,
+      "start": "2025-07-23T12:01:00",
+      "end": "2025-07-23T14:01:00",
+      "tags": ["work"]
+    },
+    "2": {
+      "title": "Todo 02",
+      "estimate_minutes": 120,
+      "start": "2025-07-23T12:01:00",
+      "end": "2025-07-23T14:01:00",
+      "tags": ["learning"]
+    }
   },
-  "tuesday": {
-    "task": [
-      {
-        "task": "Todo 01",
-        "estimate_time": "2 hours",
-        "start": "8:01 24-07-2025",
-        "end": "14-01 24-07-2025",
-        "status": "todo"
-      },
-      {
-        "task": "Todo 02",
-        "estimate_time": "2 hours",
-        "start": "12:01 23-07-2025",
-        "end": "14-01 23-07-2025",
-        "status": "todo"
-      }
-    ]
+  "weekly_schedule": {
+    "mon": [{ "task_id": 1, "status": "todo" }],
+    "tue": [
+      { "task_id": 1, "status": "todo" },
+      { "task_id": 2, "status": "todo" }
+    ],
+    "wed": [
+      { "task_id": 1, "status": "todo" },
+      { "task_id": 2, "status": "todo" }
+    ],
+    "thu": []
   },
-  "wednesday": {
-    "tasks": [
-      {
-        "task": "Todo 01",
-        "estimate_time": "",
-        "start": "",
-        "end": "",
-        "status": "todo"
-      },
-      {
-        "task": "Todo 02",
-        "estimate_time": "",
-        "start": "",
-        "end": "",
-        "status": "todo"
-      }
-    ]
-  },
-  "thursday": {
-    "task": []
-  },
-  "friday": {
-    "task": []
-  },
-  "saturday": {
-    "task": []
-  },
-  "sunday": {
-    "task": []
-  }
+  "last_index": 2
 }
