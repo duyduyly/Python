@@ -5,7 +5,7 @@ from my_app.utils.DatetimeUtils import *
 
 
 class TodoListUI:
-    service = TodoListService()
+    __service = TodoListService()
     __column_sign = "|"
     __list_sign = "-"
 
@@ -21,13 +21,13 @@ class TodoListUI:
         print("0.Exit.")
 
     def __display_weekly_todo_list(self):
-        mon_task_list = self.service.load_task_list_by_day(DayOfWeek.MONDAY.value)
-        tue_task_list = self.service.load_task_list_by_day(DayOfWeek.TUESDAY.value)
-        wed_task_list = self.service.load_task_list_by_day(DayOfWeek.WEDNESDAY.value)
-        thu_task_list = self.service.load_task_list_by_day(DayOfWeek.THURSDAY.value)
-        fri_task_list = self.service.load_task_list_by_day(DayOfWeek.FRIDAY.value)
-        sat_task_list = self.service.load_task_list_by_day(DayOfWeek.SATURDAY.value)
-        sun_task_list = self.service.load_task_list_by_day(DayOfWeek.SUNDAY.value)
+        mon_task_list = self.__service.load_task_list_by_day(DayOfWeek.MONDAY.value)
+        tue_task_list = self.__service.load_task_list_by_day(DayOfWeek.TUESDAY.value)
+        wed_task_list = self.__service.load_task_list_by_day(DayOfWeek.WEDNESDAY.value)
+        thu_task_list = self.__service.load_task_list_by_day(DayOfWeek.THURSDAY.value)
+        fri_task_list = self.__service.load_task_list_by_day(DayOfWeek.FRIDAY.value)
+        sat_task_list = self.__service.load_task_list_by_day(DayOfWeek.SATURDAY.value)
+        sun_task_list = self.__service.load_task_list_by_day(DayOfWeek.SUNDAY.value)
 
         print(self.__generate_column(mon_task_list[keys.MAX_TITLE_SIZE], DayOfWeek.MONDAY.value, self.__column_sign),
               end="")
@@ -55,7 +55,7 @@ class TodoListUI:
         print("  |")
 
         index = 0
-        while index < 3:
+        while index < self.__service.count_max_row():
             self.__print_column(mon_task_list, index)
             self.__print_column(tue_task_list, index)
             self.__print_column(wed_task_list, index)
@@ -69,9 +69,9 @@ class TodoListUI:
 
     def __display_current_day_todo_list(self):
         day = get_lower_str_short_day()
-        task_list = self.service.load_task_list_by_day(day)
+        task_list = self.__service.load_task_list_by_day(day)
         print(self.__generate_column(task_list[keys.MAX_TITLE_SIZE], day, self.__list_sign))
-        for index in range(len(task_list) - 1):
+        for index in range(len(task_list[keys.TASK_LIST])):
             print(self.__generate_column(task_list[keys.MAX_TITLE_SIZE], task_list[keys.TASK_LIST][index],
                                          f"\t{self.__list_sign}"))
 
@@ -103,7 +103,11 @@ class TodoListUI:
 
             match choose_function:
                 case 1:
-                    pass
+                    print(
+                        "Enter task (Example: Todo 100, 120, 2025-07-23T12:01:00, 2025-07-2T314:01:00, learning|content"
+                    )
+                    str_task = str(input())
+                    self.__service.create_task(str_task)
 
                 case 2:
                     pass
@@ -117,11 +121,13 @@ class TodoListUI:
                     pass
 
                 case 6:
+                    print()
                     self.__display_weekly_todo_list()
-
+                    print()
                 case 7:
+                    print()
                     self.__display_current_day_todo_list()
-
+                    print()
                 case 8:
                     pass
 
